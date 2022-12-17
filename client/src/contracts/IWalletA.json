@@ -1,0 +1,1102 @@
+{
+  "contractName": "IWalletA",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "addOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "removeOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "transactionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "confirmTransaction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "transactionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "executeTransaction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "transactionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "revokeTransaction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"addOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"transactionId\",\"type\":\"uint256\"}],\"name\":\"confirmTransaction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"transactionId\",\"type\":\"uint256\"}],\"name\":\"executeTransaction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"removeOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"transactionId\",\"type\":\"uint256\"}],\"name\":\"revokeTransaction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"transferOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/AccessWallet.sol\":\"IWalletA\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Access.sol\":{\"keccak256\":\"0x3a6db1b4e22a596ad867ea4f05107db44e305cc5ff6da6a0a703abaf26dab246\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1f0e2a43791ce91b5d292108d3c89258bc29444211146a5ac79aad1d51f87484\",\"dweb:/ipfs/Qmai7sBL5hT9sDaHNESKo63vGaeSsJKhg5pMF2Epwu23EW\"]},\"project:/contracts/AccessWallet.sol\":{\"keccak256\":\"0x0229c76745a645c1e9cad151ecd44c36335d3a30de75cf033dd0e333c780f0a6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ed741fbd1dd12fb120f95a1d2023eb450afe6a91bd115e4f225eb1c12124e2df\",\"dweb:/ipfs/QmQhRoK3c2bG8aS1WzDBuwvkRkHBwqFBY3Hjs557QykJBh\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"keccak256\":\"0x0f633a0223d9a1dcccfcf38a64c9de0874dfcbfac0c6941ccf074d63a2ce0e1e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://864a40efcffdf408044c332a5aa38ec5618ed7b4eecb8f65faf45671bd6cdc65\",\"dweb:/ipfs/QmQJquTMtc6fgm5JQzGdsGpA2fqBe3MHWEdt2qzaLySMdN\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.9;\r\n\r\nimport \"../node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol\";\r\nimport \"./Access.sol\";\r\n\r\n\r\ninterface IWalletA {\r\n    // Allows admin to add new owner to the wallet\r\n    function addOwner(address owner) external;\r\n\r\n    // Allows admin to remove owner from the wallet\r\n    function removeOwner(address owner) external;\r\n\r\n    // Allows admin to transfer owner from one wallet to  another\r\n    function transferOwner(address _from, address _to) external;\r\n\r\n    // Allows an owner to confirm a transaction.\r\n    function confirmTransaction(uint256 transactionId) external;\r\n\r\n    // Allows anyone to execute a confirmed transaction.\r\n    function executeTransaction(uint256 transactionId) external;\r\n\r\n    // Allows an owner to revoke a confirmation for a transaction.\r\n    function revokeTransaction(uint256 transactionId) external;\r\n}\r\n\r\ncontract AccessWallet is Access {\r\n    using SafeMath for uint256;\r\n\r\n    IWalletA _walletInterface;\r\n\r\n    // Contract constructor instantiates wallet interface and sets msg.sender to admin\r\n     \r\n    constructor(IWalletA wallet_, address[] memory _owners) Access(_owners){\r\n        _walletInterface = IWalletA(wallet_);\r\n        admin = msg.sender;\r\n    }\r\n\r\n    function getOwners() external view returns (address[] memory) {\r\n        return owners;\r\n     }\r\n\r\n    function getAdmin() external view returns (address) {\r\n        return admin;\r\n    }\r\n}",
+  "sourcePath": "C:\\Users\\lenovo\\Desktop\\Multi sig wallet\\contracts\\AccessWallet.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/AccessWallet.sol",
+    "exportedSymbols": {
+      "Access": [
+        391
+      ],
+      "AccessWallet": [
+        478
+      ],
+      "IWalletA": [
+        428
+      ],
+      "SafeMath": [
+        1254
+      ]
+    },
+    "id": 479,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 393,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".9"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:1"
+      },
+      {
+        "absolutePath": "project:/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "file": "../node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "id": 394,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 479,
+        "sourceUnit": 1255,
+        "src": "62:73:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/Access.sol",
+        "file": "./Access.sol",
+        "id": 395,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 479,
+        "sourceUnit": 392,
+        "src": "137:22:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IWalletA",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 428,
+        "linearizedBaseContracts": [
+          428
+        ],
+        "name": "IWalletA",
+        "nameLocation": "175:8:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "7065cb48",
+            "id": 400,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addOwner",
+            "nameLocation": "252:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 397,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "269:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 400,
+                  "src": "261:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 396,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "261:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "260:15:1"
+            },
+            "returnParameters": {
+              "id": 399,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "284:0:1"
+            },
+            "scope": 428,
+            "src": "243:42:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "173825d9",
+            "id": 405,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeOwner",
+            "nameLocation": "355:11:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 403,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 402,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "375:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 405,
+                  "src": "367:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 401,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "367:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "366:15:1"
+            },
+            "returnParameters": {
+              "id": 404,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "390:0:1"
+            },
+            "scope": 428,
+            "src": "346:45:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "31678cf6",
+            "id": 412,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferOwner",
+            "nameLocation": "475:13:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 410,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 407,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "497:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 412,
+                  "src": "489:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 406,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "489:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 409,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "512:3:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 412,
+                  "src": "504:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 408,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "504:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "488:28:1"
+            },
+            "returnParameters": {
+              "id": 411,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "525:0:1"
+            },
+            "scope": 428,
+            "src": "466:60:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "c01a8c84",
+            "id": 417,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "confirmTransaction",
+            "nameLocation": "593:18:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 415,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 414,
+                  "mutability": "mutable",
+                  "name": "transactionId",
+                  "nameLocation": "620:13:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 417,
+                  "src": "612:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 413,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "612:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "611:23:1"
+            },
+            "returnParameters": {
+              "id": 416,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "643:0:1"
+            },
+            "scope": 428,
+            "src": "584:60:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "ee22610b",
+            "id": 422,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "executeTransaction",
+            "nameLocation": "719:18:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 420,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 419,
+                  "mutability": "mutable",
+                  "name": "transactionId",
+                  "nameLocation": "746:13:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 422,
+                  "src": "738:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 418,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "738:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "737:23:1"
+            },
+            "returnParameters": {
+              "id": 421,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "769:0:1"
+            },
+            "scope": 428,
+            "src": "710:60:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "735631ad",
+            "id": 427,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "revokeTransaction",
+            "nameLocation": "855:17:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 425,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 424,
+                  "mutability": "mutable",
+                  "name": "transactionId",
+                  "nameLocation": "881:13:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 427,
+                  "src": "873:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 423,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "873:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "872:23:1"
+            },
+            "returnParameters": {
+              "id": 426,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "904:0:1"
+            },
+            "scope": 428,
+            "src": "846:59:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 479,
+        "src": "165:743:1",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 429,
+              "name": "Access",
+              "nameLocations": [
+                "937:6:1"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 391,
+              "src": "937:6:1"
+            },
+            "id": 430,
+            "nodeType": "InheritanceSpecifier",
+            "src": "937:6:1"
+          }
+        ],
+        "canonicalName": "AccessWallet",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 478,
+        "linearizedBaseContracts": [
+          478,
+          391
+        ],
+        "name": "AccessWallet",
+        "nameLocation": "921:12:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "global": false,
+            "id": 433,
+            "libraryName": {
+              "id": 431,
+              "name": "SafeMath",
+              "nameLocations": [
+                "957:8:1"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1254,
+              "src": "957:8:1"
+            },
+            "nodeType": "UsingForDirective",
+            "src": "951:27:1",
+            "typeName": {
+              "id": 432,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "970:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 436,
+            "mutability": "mutable",
+            "name": "_walletInterface",
+            "nameLocation": "995:16:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 478,
+            "src": "986:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IWalletA_$428",
+              "typeString": "contract IWalletA"
+            },
+            "typeName": {
+              "id": 435,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 434,
+                "name": "IWalletA",
+                "nameLocations": [
+                  "986:8:1"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 428,
+                "src": "986:8:1"
+              },
+              "referencedDeclaration": 428,
+              "src": "986:8:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IWalletA_$428",
+                "typeString": "contract IWalletA"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 459,
+              "nodeType": "Block",
+              "src": "1186:84:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 452,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 448,
+                      "name": "_walletInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 436,
+                      "src": "1197:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IWalletA_$428",
+                        "typeString": "contract IWalletA"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 450,
+                          "name": "wallet_",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 439,
+                          "src": "1225:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_IWalletA_$428",
+                            "typeString": "contract IWalletA"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_IWalletA_$428",
+                            "typeString": "contract IWalletA"
+                          }
+                        ],
+                        "id": 449,
+                        "name": "IWalletA",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 428,
+                        "src": "1216:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_IWalletA_$428_$",
+                          "typeString": "type(contract IWalletA)"
+                        }
+                      },
+                      "id": 451,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1216:17:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IWalletA_$428",
+                        "typeString": "contract IWalletA"
+                      }
+                    },
+                    "src": "1197:36:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IWalletA_$428",
+                      "typeString": "contract IWalletA"
+                    }
+                  },
+                  "id": 453,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1197:36:1"
+                },
+                {
+                  "expression": {
+                    "id": 457,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 454,
+                      "name": "admin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 53,
+                      "src": "1244:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 455,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "1252:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 456,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1256:6:1",
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "1252:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1244:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 458,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1244:18:1"
+                }
+              ]
+            },
+            "id": 460,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 445,
+                    "name": "_owners",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 442,
+                    "src": "1178:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                      "typeString": "address[] memory"
+                    }
+                  }
+                ],
+                "id": 446,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 444,
+                  "name": "Access",
+                  "nameLocations": [
+                    "1171:6:1"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 391,
+                  "src": "1171:6:1"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1171:15:1"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 443,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 439,
+                  "mutability": "mutable",
+                  "name": "wallet_",
+                  "nameLocation": "1136:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 460,
+                  "src": "1127:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IWalletA_$428",
+                    "typeString": "contract IWalletA"
+                  },
+                  "typeName": {
+                    "id": 438,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 437,
+                      "name": "IWalletA",
+                      "nameLocations": [
+                        "1127:8:1"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 428,
+                      "src": "1127:8:1"
+                    },
+                    "referencedDeclaration": 428,
+                    "src": "1127:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IWalletA_$428",
+                      "typeString": "contract IWalletA"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 442,
+                  "mutability": "mutable",
+                  "name": "_owners",
+                  "nameLocation": "1162:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 460,
+                  "src": "1145:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 440,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1145:7:1",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 441,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1145:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1126:44:1"
+            },
+            "returnParameters": {
+              "id": 447,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1186:0:1"
+            },
+            "scope": 478,
+            "src": "1115:155:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 468,
+              "nodeType": "Block",
+              "src": "1340:33:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 466,
+                    "name": "owners",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 56,
+                    "src": "1358:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 465,
+                  "id": 467,
+                  "nodeType": "Return",
+                  "src": "1351:13:1"
+                }
+              ]
+            },
+            "functionSelector": "a0e67e2b",
+            "id": 469,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOwners",
+            "nameLocation": "1287:9:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 461,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1296:2:1"
+            },
+            "returnParameters": {
+              "id": 465,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 464,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 469,
+                  "src": "1322:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 462,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1322:7:1",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 463,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1322:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1321:18:1"
+            },
+            "scope": 478,
+            "src": "1278:95:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 476,
+              "nodeType": "Block",
+              "src": "1433:31:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 474,
+                    "name": "admin",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 53,
+                    "src": "1451:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 473,
+                  "id": 475,
+                  "nodeType": "Return",
+                  "src": "1444:12:1"
+                }
+              ]
+            },
+            "functionSelector": "6e9960c3",
+            "id": 477,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAdmin",
+            "nameLocation": "1390:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 470,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1398:2:1"
+            },
+            "returnParameters": {
+              "id": 473,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 472,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 477,
+                  "src": "1424:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 471,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1424:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1423:9:1"
+            },
+            "scope": 478,
+            "src": "1381:83:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 479,
+        "src": "912:555:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:1432:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-12-17T15:11:45.964Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
